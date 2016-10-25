@@ -5,7 +5,6 @@ const autoprefixer = require('autoprefixer')
 const IsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 const isomorphicConfig = require('./isomorphic-tools-config')
 const hotMiddleware = 'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr&timeout=20000&reload=true'
-// const hotMiddleware = 'webpack-hot-middleware/client?path=http://10.42.3.86:8080/__webpack_hmr&timeout=20000&reload=true'
 const webpackIsomorphicTools = new IsomorphicToolsPlugin(isomorphicConfig)
 
 module.exports = {
@@ -16,7 +15,6 @@ module.exports = {
     path: path.join(__dirname, '..', 'build/public/compiled'),
     filename: 'bundle.js',
     publicPath: 'http://localhost:8080/'
-    // publicPath: 'http://10.42.3.86:8080/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),

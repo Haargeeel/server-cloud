@@ -4,7 +4,7 @@ const reduxer = require('./controller/reduxer')
 
 const app = express()
 
-app.use(express.static(__dirname + '/../../build/public'));
+app.use(express.static(__dirname + '/../build/public'));
 
 app.get('/',
   reduxer.buildInitialState,

@@ -1,8 +1,13 @@
-require('babel-register')({
-  babelrc: false,
-  presets: ['react', 'stage-0', 'es2015'],
-  only: [/src/, "app/controller"]
-})
+const babelSettings = process.env.NODE_ENV !== 'production'
+  ? {
+      babelrc: false,
+      presets: ['react', 'stage-0', 'es2015'],
+      only: [/src/, "app/controller"]
+    }
+  : {}
+
+require('babel-register')(babelSettings)
+
 const path = require('path')
 const IsomorphicToolsPlugin = require('webpack-isomorphic-tools')
 const isomorphicConfig = require('./webpack/isomorphic-tools-config')

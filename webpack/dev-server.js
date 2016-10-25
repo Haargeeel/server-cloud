@@ -9,7 +9,6 @@ const config = require('./dev.config')
 const compiler = webpack(config)
 const port = 8080
 const host = 'localhost'
-// const host = '10.42.3.86'
 const options = {
   contentBase: `http://${host}:${port}`,
   quiet: true,

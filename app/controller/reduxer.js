@@ -1,4 +1,3 @@
-/* jshint ignore:start */
 const me = module.exports = {}
 
 import React from 'react'
@@ -63,6 +62,4 @@ me.buildInitialState = (req, res, next) => {
   }
   next()
 }
-
-/* jshint ignore:end */
 
