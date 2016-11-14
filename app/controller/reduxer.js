@@ -57,7 +57,21 @@ me.render= (req, res, next) => {
 me.buildInitialState = (req, res, next) => {
   req.initialState = {
     landing: {
-      test: 'empty'
+      test: 'empty',
+      content: [
+        {
+          image: 'burger',
+          text: 'Rem quia expedita quos laborum voluptates nisi. Reiciendis omnis aliquid impedit ut est aut ea dolores. Eius velit tempore vitae ipsam sit. Expedita est vel iure commodi. Fugit maiores cupiditate molestias corrupti quam impedit autem consequuntur.'
+        },
+        {
+          image: 'pasta',
+          text: 'Rem quia expedita quos laborum voluptates nisi. Reiciendis omnis aliquid impedit ut est aut ea dolores. Eius velit tempore vitae ipsam sit. Expedita est vel iure commodi. Fugit maiores cupiditate molestias corrupti quam impedit autem consequuntur.'
+        },
+        {
+          image: 'teig',
+          text: 'Rem quia expedita quos laborum voluptates nisi. Reiciendis omnis aliquid impedit ut est aut ea dolores. Eius velit tempore vitae ipsam sit. Expedita est vel iure commodi. Fugit maiores cupiditate molestias corrupti quam impedit autem consequuntur.'
+        }
+      ]
     }
   }
   next()

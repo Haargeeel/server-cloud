@@ -1,0 +1,31 @@
+@import '../colorScheme'
+
+.home
+  padding-top 80px
+
+  .wrapper
+    max-width 1000px
+    margin auto
+    position relative
+
+  .content
+    height 300px
+    width 100%
+    display flex
+
+    &:nth-child(even)
+      flex-direction row-reverse
+
+  .imageWrapper
+    height 100%
+    width 50%
+    background-color $lightBlue
+
+  .textWrapper
+    height 100%
+    width 50%
+    display flex
+
+  .text
+    padding 20px
+    align-self center

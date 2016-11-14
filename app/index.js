@@ -6,18 +6,19 @@ const test = require('./models/test')
 const app = express()
 
 app.use(express.static(__dirname + '/../build/public'));
+app.use(express.static(__dirname + '/../src/assets/img'));
 
 app.get('/',
-  (req, res, next) => {
-    test.test.then(doc => {
-      console.log('doc', doc)
-      next()
-    })
-    .catch(err => {
-      console.log(err)
-      next()
-    })
-  },
+  // (req, res, next) => {
+    // test.test.then(doc => {
+      // console.log('doc', doc)
+      // next()
+    // })
+    // .catch(err => {
+      // console.log(err)
+      // next()
+    // })
+  // },
   reduxer.buildInitialState,
   reduxer.render
 )

@@ -1,3 +1,3 @@
-export const landing = (state = {}, action) => {
+export const landing = (state = {content: []}, action) => {
   return state
 }
