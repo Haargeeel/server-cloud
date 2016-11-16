@@ -16,10 +16,33 @@
     &:nth-child(even)
       flex-direction row-reverse
 
+    &:nth-child(1)
+      .image
+        background-image url('../assets/img/burger.png')
+    &:nth-child(2)
+      .image
+        background-image url('../assets/img/pasta.png')
+    &:nth-child(3)
+      .image
+        background-image url('../assets/img/burrito.png')
+
   .imageWrapper
     height 100%
     width 50%
-    background-color $lightBlue
+    position relative
+
+    .image
+      position absolute
+      left 50px
+      top 50px
+      height calc(100% - 100px)
+      width calc(100% - 100px)
+      margin auto
+      background-size contain
+      background-attachment: no-scroll
+      background-position: 50% 50%, 50% 50%
+      background-repeat: no-repeat, no-repeat
+
 
   .textWrapper
     height 100%

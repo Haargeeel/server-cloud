@@ -1,13 +1,13 @@
 import React from 'react'
 
+import Logo from './Logo'
+
 import style from './Navigation.styl'
 
 export default () =>
   <div className={style.navigation}>
     <div className={style.wrapper}>
-      <span className={style.title}>
-        What's for dinner?
-      </span>
+      <Logo />
       <ul className={style.nav}>
         <li>
           test
