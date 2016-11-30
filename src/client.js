@@ -11,7 +11,7 @@ const store = configureStore(initialState, browserHistory)
 const routes = createRoute(store)
 const history = syncHistoryWithStore(browserHistory, store)
 
-require('normalize.css')
+// require('normalize.css')
 
 render(
   <Provider store={store}>

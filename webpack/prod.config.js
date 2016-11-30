@@ -51,14 +51,14 @@ module.exports = {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!stylus')
       },
-      // {
-        // test: /.*\.(gif|png|jpe?g|svg)$/i,
-        // loaders: [
-          // 'file?hash=sha512&digest=hex&name=[name].[ext]',
-          // 'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        // ],
-        // include: path.join(__dirname, '..', 'src')
-      // }
+      {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[name].[ext]',
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ],
+        include: path.join(__dirname, '..', 'src')
+      }
     ]
   },
   postcss: () => [autoprefixer]

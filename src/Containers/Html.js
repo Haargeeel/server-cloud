@@ -6,6 +6,7 @@ import serialize from 'serialize-javascript'
 const style = {
   minHeight: '100%',
   position: 'relative',
+  margin: 0,
   fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif'
 }
 
