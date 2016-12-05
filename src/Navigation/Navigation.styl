@@ -2,14 +2,20 @@
 
 .navigation
   position fixed
-  height 80px
+  height 50px
   width 100%
-  background-color $lightBlue
   z-index 10
+  overflow hidden
+  border-bottom 1px solid $white
+  background-color white
+
+  a
+    text-decoration none
+    color $black
 
   .wrapper
     max-width 1200px
-    height 80px
+    height 50px
     margin auto
     display flex
     justify-content space-between
@@ -21,10 +27,49 @@
     cursor pointer
 
   .nav
+    margin 0
+    height 100%
     list-style-type none
-    align-self center
     display flex
 
     li
-      margin 0 10px
+      margin 0
       cursor pointer
+      display flex
+      position relative
+      transition background .5s
+      background rgba(255, 255, 255, 1)
+      &:nth-child(1)
+        .color
+          background-color #3399ff
+      &:nth-child(2)
+        .color
+          background-color #33ff00
+      &:nth-child(3)
+        .color
+          background-color #ff3333
+      &:hover
+        .color
+          transform scaleY(5)
+        &:nth-child(1)
+          background rgba(51, 153, 255, 0.1)
+        &:nth-child(2)
+          background rgba(51, 255, 0, 0.1)
+        &:nth-child(3)
+          background rgba(255, 51, 51, 0.1)
+    a
+      display flex
+    .text
+      padding 0 10px
+      width 100px
+      text-align center
+      align-self center
+    .color
+      transition transform .5s
+      position absolute
+      width 100%
+      height 2px
+      bottom 0
+      left 0
+
+
