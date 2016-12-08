@@ -56,6 +56,9 @@ me.render= (req, res, next) => {
  *   */
 me.buildInitialState = (req, res, next) => {
   req.initialState = {
+    explore: {
+      meals: req.meals
+    },
     landing: {
       test: 'empty',
       content: [

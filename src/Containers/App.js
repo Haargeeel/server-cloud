@@ -10,7 +10,6 @@ const App = ({ children }) =>
     <Helmet {...head} />
     <Navigation />
     {children}
-    <Footer />
   </div>
 
 App.propTypes = {

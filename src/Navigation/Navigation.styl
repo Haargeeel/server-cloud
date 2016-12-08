@@ -6,8 +6,16 @@
   width 100%
   z-index 10
   overflow hidden
-  border-bottom 1px solid $white
-  background-color white
+  background white
+  transition background .5s
+
+  &.glass
+    background rgba(255,255,255,0)
+    a
+      color white
+    .nav
+      li
+        background rgba(255,255,255,0)
 
   a
     text-decoration none
@@ -38,7 +46,6 @@
       display flex
       position relative
       transition background .5s
-      background rgba(255, 255, 255, 1)
       &:nth-child(1)
         .color
           background-color #3399ff

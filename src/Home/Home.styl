@@ -1,54 +1,49 @@
 @import '../colorScheme'
 
 .home
-  padding-top 50px
+  perspective 300px
+  height 100vh
+  overflow-x hidden
+  overflow-y auto
 
-  .wrapper
-    max-width 1000px
-    margin auto
+  .group
     position relative
+    height 100vh
+    transform-style preserve-3d
+    z-index 5
+    &.front
+      z-index 10
+      background-color white
 
-  .content
-    height 300px
-    width 100%
-    display flex
+  .layer
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
 
-    &:nth-child(even)
-      flex-direction row-reverse
+    &.base
+      transform translateZ(0)
+      z-index 4
+      div
+        color white
+        text-align center
+        font-size 2rem
+        position absolute
+        left 50%
+        top 50%
+        transform translate(-50%, -50%)
+    &.back
+      background-size cover
+      background-attachment fixed
+      background-position 50% 50%, 50% 50%
+      background-repeat no-repeat, no-repeat
+      transform translateZ(-300px) scale(2)
+      z-index 3
+      &.burger
+        background-image url('../assets/img/burger2.png')
+      &.pizza
+        background-image url('../assets/img/pizza.png')
+      &.pasta
+        background-image url('../assets/img/pasta2.png')
 
-    &:nth-child(1)
-      .image
-        background-image url('../assets/img/burger.png')
-    &:nth-child(2)
-      .image
-        background-image url('../assets/img/pasta.png')
-    &:nth-child(3)
-      .image
-        background-image url('../assets/img/burrito.png')
-
-  .imageWrapper
-    height 100%
-    width 50%
-    position relative
-
-    .image
-      position absolute
-      left 50px
-      top 50px
-      height calc(100% - 100px)
-      width calc(100% - 100px)
-      margin auto
-      background-size contain
-      background-attachment: no-scroll
-      background-position: 50% 50%, 50% 50%
-      background-repeat: no-repeat, no-repeat
-
-
-  .textWrapper
-    height 100%
-    width 50%
-    display flex
-
-  .text
-    padding 20px
-    align-self center
