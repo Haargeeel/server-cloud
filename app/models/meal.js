@@ -1,8 +1,24 @@
 const mongo = require('../plugins/mongo')
 
-const _ = module.exports = {}
+const me = module.exports = {}
 
-_.addMeal = meal =>
+me.getMealCount = () =>
+  new Promise((resolve, reject) => {
+    mongo.get('dinner').then(db => {
+      const col = db.collection('meals')
+      col.count().then(n => {
+        resolve(n)
+      })
+      .catch(err => {
+        reject(err)
+      })
+    })
+    .catch(err => {
+      reject(err)
+    })
+  })
+
+me.addMeal = meal =>
   new Promise((resolve, reject) => {
     mongo.get('dinner').then(db => {
       const col = db.collection('meals')
@@ -18,7 +34,7 @@ _.addMeal = meal =>
     })
   })
 
-_.findMeal = query =>
+me.findMeal = query =>
   new Promise((resolve, reject) => {
     mongo.get('dinner').then(db => {
       const col = db.collection('meals')
@@ -34,7 +50,7 @@ _.findMeal = query =>
     })
   })
 
-_.getAllMeals = () =>
+me.getAllMeals = () =>
   new Promise((resolve, reject) => {
     mongo.get('dinner').then(db => {
       const col = db.collection('meals')
@@ -48,4 +64,18 @@ _.getAllMeals = () =>
     .catch(err => {
       reject(err)
     })
+  })
+
+me.getRandomMeal = () =>
+  new Promise((resolve, reject) => {
+    mongo.get('dinner').then(db => {
+      const col = db.collection('meals')
+      const cursor = col.aggregate([{ $sample: { size: 1 } }])
+      cursor.toArray().then(docs => {
+        resolve(docs[0])
+      })
+    })
+      .catch(err => {
+        reject(err)
+      })
   })

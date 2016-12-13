@@ -41,7 +41,6 @@ class Home extends Component {
   }
 
   render () {
-    const { content } = this.props
     return (
       <div className={style.home} ref={div => { this.el = div }}>
         <div className={style.group}>

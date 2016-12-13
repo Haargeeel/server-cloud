@@ -10,10 +10,6 @@ const cx = classNames.bind(style)
 
 class Navigation extends Component {
 
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return <div className={cx('navigation', { glass: this.props.isOnTop })}>
       <div className={style.wrapper}>
@@ -38,7 +34,7 @@ class Navigation extends Component {
             </a>
           </li>
           <li>
-            <a>
+            <a href='/meals/luck'>
               <span className={style.color} />
               <span className={style.text}>
                 Get a dish

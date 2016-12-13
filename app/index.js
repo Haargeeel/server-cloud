@@ -17,6 +17,7 @@ app.get('/',
 
 app.get('/meals',
   meal.getMeals,
+  meal.getRandomMeal,
   reduxer.buildInitialState,
   reduxer.render
 )
@@ -27,6 +28,12 @@ app.post('/meals',
 )
 
 app.get('/meals/add',
+  reduxer.buildInitialState,
+  reduxer.render
+)
+
+app.get('/meals/luck',
+  meal.getRandomMeal,
   reduxer.buildInitialState,
   reduxer.render
 )

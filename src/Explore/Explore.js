@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Meal from './Meal'
 
 const Explore = (props) => {
-  console.log(props)
   return <div style={{ paddingTop: 70 }}>
     <ul>
       {props.meals.map((m, i) =>

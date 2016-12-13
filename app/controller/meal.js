@@ -1,8 +1,8 @@
 import meal from '../models/meal'
 
-const _ = module.exports = {}
+const me = module.exports = {}
 
-_.getMeals = (req, res, next) =>
+me.getMeals = (req, res, next) =>
   meal.getAllMeals().then(meals => {
     req.meals = meals
     next()
@@ -11,9 +11,21 @@ _.getMeals = (req, res, next) =>
     next(err)
   })
 
-_.addMeal = (req, res, next) => {
+me.addMeal = (req, res, next) => {
   meal.addMeal(req.body)
     .then(() => {
       res.json({ status: 'success' })
     })
+    .catch(err => {
+      next(err)
+    })
 }
+
+me.getRandomMeal = (req, res, next) =>
+  meal.getRandomMeal().then(meal => {
+    req.meal = meal
+    next()
+  })
+  .catch(err => {
+    next(err)
+  })

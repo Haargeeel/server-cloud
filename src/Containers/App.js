@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 
 import head from '../headerConfig'
 import { Navigation } from '../Navigation'
-import { Footer } from '../Footer'
 
 const App = ({ children }) =>
   <div>

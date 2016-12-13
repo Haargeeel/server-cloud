@@ -59,6 +59,9 @@ me.buildInitialState = (req, res, next) => {
     explore: {
       meals: req.meals
     },
+    luck: {
+      meal: req.meal
+    },
     landing: {
       test: 'empty',
       content: [
